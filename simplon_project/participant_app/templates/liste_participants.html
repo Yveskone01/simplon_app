@@ -1,0 +1,77 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"  href="{%static 'dataTableStyle/fonts/icomoon/style.css'%}">
+
+    <link rel="stylesheet"  href="{%static 'dataTableStyle/css/owl.carousel.min.css'%}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"  href="{%static 'dataTableStyle/css/bootstrap.min.css'%}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{%static 'dataTableStyle/css/style.css'%}">
+
+    <title>Table #6</title>
+  </head>
+  <body>
+
+
+  <div class="content">
+
+    <div class="container">
+      <h2 class="mb-5 text-center" >lISTE DES PARTICIPANTS</h2>
+
+
+      <div class="table-responsive">
+
+        <table class="table table-striped custom-table">
+          <thead>
+            <tr>
+
+              <th scope="col">NOM</th>
+              <th scope="col">PRENOM</th>
+              <th scope="col">CONTACT</th>
+              <th scope="col">EMAIL</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for participant in participants %}
+                        <tr scope="row">
+                      <td>
+                        {{participant.firstname}}
+                      </td>
+                      <td>
+                        {{participant.lastname}}</td>
+                      <td>
+                        {{participant.phone}}
+                        <small class="d-block"></small>
+                      </td>
+                      <td><a href="#">{{participant.email}}</a></td>
+
+            </tr>
+          {% endfor%}
+
+
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+    <script src="{%static 'dataTableStyle/js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{%static 'dataTableStyle/js/popper.min.js'%}"></script>
+    <script src="{%static 'dataTableStyle/js/bootstrap.min.js'%}"></script>
+    <script src="{%static 'dataTableStyle/vendor/datepicker/daterangepicker.js'%}"></script>
+  </body>
+</html>
